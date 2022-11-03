@@ -10,9 +10,9 @@ This TaskManager is a console (non-GUI) application.
 - saving data to file and exit from the application
 
 ### Sample tasks.csv file:
-Simple task - very important, 2020-03-09, true
-Second task not so important, 2020-05-10, false
-Throw away trash, 2020-03-09, false
+Simple task - very important, 2020-03-09, true<br/>
+Second task not so important, 2020-05-10, false<br/>
+Throw away trash, 2020-03-09, false<br/>
 
 ## IDE:
 IntelliJ IDEA
