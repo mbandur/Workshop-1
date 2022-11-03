@@ -117,7 +117,7 @@ public class TaskManager {
         return list;
     }
     private static void saveTask(String[][] list) {
-        try (FileWriter writer = new FileWriter("z" + FILENAME, false)) {
+        try (FileWriter writer = new FileWriter(FILENAME, false)) {
             for (String[] task: list) {
                 writer.append(String.join(",", task) + "\n");
             }
