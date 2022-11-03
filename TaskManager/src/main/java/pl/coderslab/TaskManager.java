@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TaskManager {
@@ -21,10 +22,12 @@ public class TaskManager {
             mainOptions();
             switch (scanLine.nextLine()) {
                 case "add":
+                    listOfTasks = addTask(listOfTasks);
                     break;
                 case "remove":
                     break;
                 case "list":
+                    listTask(listOfTasks);
                     break;
                 case "exit":
                     System.exit(0);
@@ -62,5 +65,23 @@ public class TaskManager {
         for (String function: LIST_OF_FUNCTIONS) {
             System.out.println(function);
         }
+    }
+    private static void listTask(String[][] list) {
+        for (int actualLoopValue = 0; actualLoopValue < list.length; actualLoopValue++) {
+            System.out.printf("%d : %s\t%s\t%s\n", actualLoopValue, list[actualLoopValue][0], list[actualLoopValue][1], list[actualLoopValue][2]);
+        }
+    }
+    private static String[][] addTask(String[][] list) {
+        String[] newLine = new String[3];
+
+        System.out.println("Please add task description");
+        newLine[0] = scanLine.nextLine();
+        System.out.println("Please add task due date");
+        newLine[1] = scanLine.nextLine();
+        System.out.println("Is your task is important: true/false");
+        newLine[2] = scanLine.nextLine();
+        list = Arrays.copyOf(list, list.length + 1);
+        list[list.length - 1] = newLine;
+        return list;
     }
 }
