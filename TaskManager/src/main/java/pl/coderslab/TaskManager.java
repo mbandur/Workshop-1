@@ -1,7 +1,11 @@
 package pl.coderslab;
 
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.math.NumberUtils;
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -25,11 +29,14 @@ public class TaskManager {
                     listOfTasks = addTask(listOfTasks);
                     break;
                 case "remove":
+                    listOfTasks = removeTask(listOfTasks);
                     break;
                 case "list":
                     listTask(listOfTasks);
                     break;
                 case "exit":
+                    saveTask(listOfTasks);
+                    System.out.println(ConsoleColors.RED + "Bye, bye");
                     System.exit(0);
                     break;
                 default:
@@ -60,6 +67,7 @@ public class TaskManager {
         }
         return data;
     }
+
     private static void mainOptions() {
         System.out.println(ConsoleColors.BLUE + "\nPlease select an option:" + ConsoleColors.RESET);
         for (String function: LIST_OF_FUNCTIONS) {
@@ -83,5 +91,38 @@ public class TaskManager {
         list = Arrays.copyOf(list, list.length + 1);
         list[list.length - 1] = newLine;
         return list;
+    }
+    private static String[][] removeTask(String[][] list) {
+        String stringIndexToRemove;
+        int intIndexToRemove;
+
+        System.out.println("Please select number to remove.");
+        while (true) {
+            stringIndexToRemove = scanLine.nextLine();
+            if (NumberUtils.isParsable(stringIndexToRemove)) {
+                intIndexToRemove = Integer.parseInt(stringIndexToRemove);
+                if (intIndexToRemove >= 0 ) {
+                    try {
+                        list = ArrayUtils.remove(list, intIndexToRemove);
+                        break;
+                    } catch (IndexOutOfBoundsException e) {
+                        System.out.println("Incorrect argument passed. Please give number greater or equal 0");
+                        continue;
+                    }
+                }
+            }
+            System.out.println("Incorrect argument passed. Please give number greater or equal 0");
+        }
+        System.out.println("Value was successfully deleted.");
+        return list;
+    }
+    private static void saveTask(String[][] list) {
+        try (FileWriter writer = new FileWriter("z" + FILENAME, false)) {
+            for (String[] task: list) {
+                writer.append(String.join(",", task) + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
