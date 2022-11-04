@@ -13,9 +13,9 @@ The aim of the project is to create a console (non-GUI) application for managing
 
 ## To improve:
 #### > listTask: 
-- sorting by data and importance
+- sorting by data
 - red font in tasks with previous date
-- orange font in tasks with current date
+- yellow font in tasks with current date
 - green font in tasks with future date
 
 #### > addTask:
