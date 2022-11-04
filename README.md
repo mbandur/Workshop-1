@@ -27,7 +27,7 @@ The aim of the project is to create a console (non-GUI) application for managing
 - add confirmation to remove task
 
 #### > csv file:
-- change csv delimiter from ',' to '|'
+- change csv delimiter from "," to "|"
  
 ## Sample tasks.csv file:
 Simple task - very important, 2020-03-09, true<br/>
