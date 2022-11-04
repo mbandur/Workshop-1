@@ -17,7 +17,7 @@ The aim of the project is to create a console (non-GUI) application for managing
 - red font in tasks with previous date
 - orange font in tasks with current date
 - green font in tasks with future date
-- 
+
 #### > addTask:
 - check if a string is a date value
 - check if task is due
