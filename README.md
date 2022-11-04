@@ -14,4 +14,4 @@ Second task not so important, 2020-05-10, false<br/>
 Throw away trash, 2020-03-09, false<br/>
 
 ## IDE:
-IntelliJ IDEA
+IntelliJ IDEA 2022.2.2
