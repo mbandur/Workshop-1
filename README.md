@@ -1,19 +1,35 @@
 # TaskManager
 The aim of the project is to create a console (non-GUI) application for managing tasks.<br/>
 
-## TaskManager have following features:
+## TaskManager has following features:
 - loading data from a tasks.csv file separated by "," at application startup,
-- listing all avaliable tasks,
-- adding a task
+- listing all available tasks,
+- adding a new task
 - removing a task
 - saving data to file and exit from the application
 
+## Data validation in TaskManager:
+- removeTask: the entered numeric value is validated if is non-negative and not bigger than number of available tasks.
 
-## Validating data:
-- during removing task: the numeric value is validated if is non-negative and not bigger than number of avaliable tasks.
+## To improve:
+#### > listTask: 
+- sorting by data and importance
+- red font in tasks with previous date
+- orange font in tasks with current date
+- green font in tasks with future date
+- 
+#### > addTask:
+- check if a string is a date value
+- check if task is due
+- check if a string is a boolean value 
 
+#### > removeTask:
+- add confirmation to remove task
 
-#### Sample tasks.csv file:
+#### > csv file:
+- change csv delimiter from ',' to '|'
+ 
+## Sample tasks.csv file:
 Simple task - very important, 2020-03-09, true<br/>
 Second task not so important, 2020-05-10, false<br/>
 Throw away trash, 2020-03-09, false<br/>
