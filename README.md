@@ -8,7 +8,7 @@ The aim of the project is to create a console (non-GUI) application for managing
 - removing a task
 - saving data to file and exit from the application
 
-### Sample tasks.csv file:
+#### Sample tasks.csv file:
 Simple task - very important, 2020-03-09, true<br/>
 Second task not so important, 2020-05-10, false<br/>
 Throw away trash, 2020-03-09, false<br/>
