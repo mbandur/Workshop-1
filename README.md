@@ -1,6 +1,5 @@
 # TaskManager
-The aim of the project is to create a console application for managing tasks.<br/>
-This **TaskManager** is a console (non-GUI) application. 
+The aim of the project is to create a console (non-GUI) application for managing tasks.<br/>
 
 ## TaskManager have following features:
 - loading data from a tasks.csv file separated by "," at application startup,
